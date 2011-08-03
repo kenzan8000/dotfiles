@@ -14,27 +14,24 @@ set history=100        "コマンド、検索パターンを100個まで履歴�
 set showmatch          "括弧入力時の対応する括弧を表示
 set matchtime=2        "対応する括弧の表示時間を2にする
 set scrolloff=1000     "カーソル位置を画面の中心にする
-"---------------------------------------------------------
 "行
 set number             "行番号を表示
 set wrap               "折り返して次の行に表示する
 set formatoptions+=mM  "テキスト挿入中の自動折り返しを日本語に対応させる
-"----------------------------------------------------------
-"インデント
+"インデント・空白
 set smartindent        "自動インデント
 set nolist             "タブや改行を表示しない(ex:$,^I)
 set tabstop=2          "タブの空白数
 set softtabstop=2      "インデントの空白数
 set shiftwidth=2       "タブの代わりに空白を使わない
 set expandtab          "タブの代わりにスペースを使う
-"---------------------------------------------------------
+autocmd BufWritePre * :%s/\s\+$//ge   "保存時に行末の空白を除去する
 "検索
 set hlsearch           "検索結果文字列のハイライトを有効にする
 set ignorecase         "検索の時に大文字小文字を区別しない
 set smartcase          "検索の時に大文字が含まれている場合は区別して検索する
 set noincsearch        "インクリメンタルサーチを使わない
 set wrapscan           "検索時にファイルの最後まで行ったら最初に戻る
-"---------------------------------------------------------
 "コマンド・ステータスライン
 set laststatus=2       "ステータスラインを常に表示
 set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=<%l/%L:%p%%>  "ステータスラインに表示する情報の指定
@@ -92,3 +89,5 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 "  let $PATH = $PATH . '/usr/local/bin'
 "endif
 "let g:ref_alc_start_linenumber=39   "余計な行を読み飛ばす
+"----------------------------------------------------------
+"surround
