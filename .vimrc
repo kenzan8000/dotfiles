@@ -6,28 +6,6 @@ else
   set fenc=utf-8
   set fencs=utf-8,iso-2022-jp,euc-jp,cp932
 endif
-"----------------------------------------------------------
-"フォント
-if  has('mac')
-  set guifont=Andale\ Mono:h20
-  set guifontwide=ヒラギノ角ゴ\ StdN\ W10:h20
-elseif has('win32' || 'win64')
-else
-  set guifont=VL\ MonoSpace\ 12
-endif
-"----------------------------------------------------------
-"カラー
-syntax on
-hi clear
-if exists("syntax_on")
-  syntax reset
-endif
-set bg=dark
-colorscheme black
-"---------------------------------------------------------
-"ファイル
-autocmd! BufRead,BufNewFile *.scala set filetype=scala
-autocmd! BufRead,BufNewFile *.mm set filetype=objcpp
 "---------------------------------------------------------
 set hidden
 set shortmess+=I       "起動時のメッセージをスキップ
@@ -60,10 +38,24 @@ set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=<%l/%L:%
 set showcmd            "コマンドをステータス行に表示
 set wildmenu           "コマンドライン補完を拡張モードにする
 set textwidth=0        "入力されているテキストの最大
-
-"**********************************************************
-"                         plugin
-"**********************************************************
+"----------------------------------------------------------
+"フォント
+if  has('mac')
+  set guifont=Andale\ Mono:h20
+  set guifontwide=ヒラギノ角ゴ\ StdN\ W10:h20
+elseif has('win32' || 'win64')
+else
+  set guifont=VL\ MonoSpace\ 12
+endif
+"----------------------------------------------------------
+"カラー
+syntax on
+hi clear
+if exists("syntax_on")
+  syntax reset
+endif
+set bg=dark
+colorscheme black
 "----------------------------------------------------------
 "neocomplcache
 let g:neocomplcache_enable_at_startup=1           "enable neocomplcache
@@ -99,6 +91,3 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 "let g:ref_alc_start_linenumber=39   "余計な行を読み飛ばす
 "----------------------------------------------------------
 "surround
-"----------------------------------------------------------
-"align
-let g:Align_xstrlen=3
