@@ -93,12 +93,17 @@ imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 "----------------------------------------------------------
 "ref
-"if has('mac')
-"  let $PATH = $PATH . '/usr/local/bin'
-"endif
-"let g:ref_alc_start_linenumber=39   "余計な行を読み飛ばす
+nnoremap :ref :Ref
+""if has('mac')
+""  let $PATH = $PATH . '/usr/local/bin'
+""endif
+""let g:ref_alc_start_linenumber=39   "余計な行を読み飛ばす
 "----------------------------------------------------------
 "surround
 "----------------------------------------------------------
 "align
+vnoremap :al :Align
 let g:Align_xstrlen=3
+"----------------------------------------------------------
+"grep
+nnoremap :grep :GrepBuffer
