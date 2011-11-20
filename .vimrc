@@ -8,12 +8,12 @@ else
 endif
 "----------------------------------------------------------
 "フォント
-if  has('mac')
+if has('mac')
   set guifont=Andale\ Mono:h20
   set guifontwide=ヒラギノ角ゴ\ StdN\ W10:h20
 elseif has('win32' || 'win64')
 else
-  set guifont=VL\ MonoSpace\ 12
+  set guifont=Ricty\ 16
 endif
 "----------------------------------------------------------
 "カラー
@@ -28,6 +28,12 @@ colorscheme black
 "ファイル
 autocmd! BufRead,BufNewFile *.scala set filetype=scala
 autocmd! BufRead,BufNewFile *.mm set filetype=objcpp
+"---------------------------------------------------------
+"ウィンドウ
+if has('win32' || 'win64')
+else
+  au GUIEnter * simalt ~x
+endif
 "---------------------------------------------------------
 set hidden
 set shortmess+=I       "起動時のメッセージをスキップ
