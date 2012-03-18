@@ -49,9 +49,9 @@ set formatoptions+=mM  "テキスト挿入中の自動折り返しを日本語�
 "インデント・空白
 set smartindent        "自動インデント
 set nolist             "タブや改行を表示しない(ex:$,^I)
-set tabstop=2          "タブの空白数
-set softtabstop=2      "インデントの空白数
-set shiftwidth=2       "タブの代わりに空白を使わない
+set tabstop=4          "タブの空白数
+set softtabstop=4      "インデントの空白数
+set shiftwidth=4       "タブの代わりに空白を使わない
 set expandtab          "タブの代わりにスペースを使う
 autocmd BufWritePre * :%s/\s\+$//ge   "保存時に行末の空白を除去する
 "検索
