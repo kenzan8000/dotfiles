@@ -2,25 +2,24 @@
 "文字コード
 if has('win32' || 'win64')
 else
-  set enc=utf-8
-  set fenc=utf-8
-  set fencs=utf-8,iso-2022-jp,euc-jp,cp932
+    set enc=utf-8
+    set fenc=utf-8
+    set fencs=utf-8,iso-2022-jp,euc-jp,cp932
 endif
 "----------------------------------------------------------
 "フォント
 if has('mac')
-  set guifont=Andale\ Mono:h20
-  set guifontwide=ヒラギノ角ゴ\ StdN\ W10:h20
+    set guifont=Ricty\ 20
 elseif has('win32' || 'win64')
 else
-  set guifont=Ricty\ 16
+    set guifont=Ricty\ 16
 endif
 "----------------------------------------------------------
 "カラー
 syntax on
 hi clear
 if exists("syntax_on")
-  syntax reset
+    syntax reset
 endif
 set bg=dark
 colorscheme black
@@ -32,67 +31,67 @@ autocmd! BufRead,BufNewFile *.mm set filetype=objcpp
 "ウィンドウ
 if has('win32' || 'win64')
 else
-  au GUIEnter * simalt ~x
+    au GUIEnter * simalt ~x
 endif
 "---------------------------------------------------------
 set hidden
-set shortmess+=I       "起動時のメッセージをスキップ
-set title              "タイトルをウインドウ枠に表示する
-set history=100        "コマンド、検索パターンを100個まで履歴に残す
-set showmatch          "括弧入力時の対応する括弧を表示
-set matchtime=2        "対応する括弧の表示時間を2にする
-set scrolloff=1000     "カーソル位置を画面の中心にする
+set shortmess+=I        "起動時のメッセージをスキップ
+set title               "タイトルをウインドウ枠に表示する
+set history=100         "コマンド、検索パターンを100個まで履歴に残す
+set showmatch           "括弧入力時の対応する括弧を表示
+set matchtime=2         "対応する括弧の表示時間を2にする
+set scrolloff=1000      "カーソル位置を画面の中心にする
 "行
-set number             "行番号を表示
-set wrap               "折り返して次の行に表示する
-set formatoptions+=mM  "テキスト挿入中の自動折り返しを日本語に対応させる
+set number              "行番号を表示
+set wrap                "折り返して次の行に表示する
+set formatoptions+=mM   "テキスト挿入中の自動折り返しを日本語に対応させる
 "インデント・空白
-set smartindent        "自動インデント
-set nolist             "タブや改行を表示しない(ex:$,^I)
-set tabstop=4          "タブの空白数
-set softtabstop=4      "インデントの空白数
-set shiftwidth=4       "タブの代わりに空白を使わない
-set expandtab          "タブの代わりにスペースを使う
-autocmd BufWritePre * :%s/\s\+$//ge   "保存時に行末の空白を除去する
+set smartindent         "自動インデント
+set nolist              "タブや改行を表示しない(ex:$,^I)
+set tabstop=4           "タブの空白数
+set softtabstop=4       "インデントの空白数
+set shiftwidth=4        "タブの代わりに空白を使わない
+set expandtab           "タブの代わりにスペースを使う
+autocmd BufWritePre * :%s/\s\+$//ge "保存時に行末の空白を除去する
 "検索
-set hlsearch           "検索結果文字列のハイライトを有効にする
-set ignorecase         "検索の時に大文字小文字を区別しない
-set smartcase          "検索の時に大文字が含まれている場合は区別して検索する
-set noincsearch        "インクリメンタルサーチを使わない
-set wrapscan           "検索時にファイルの最後まで行ったら最初に戻る
+set hlsearch            "検索結果文字列のハイライトを有効にする
+set ignorecase          "検索の時に大文字小文字を区別しない
+set smartcase           "検索の時に大文字が含まれている場合は区別して検索する
+set noincsearch         "インクリメンタルサーチを使わない
+set wrapscan            "検索時にファイルの最後まで行ったら最初に戻る
 "コマンド・ステータスライン
-set laststatus=2       "ステータスラインを常に表示
-set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=<%l/%L:%p%%>  "ステータスラインに表示する情報の指定
-set showcmd            "コマンドをステータス行に表示
-set wildmenu           "コマンドライン補完を拡張モードにする
-set textwidth=0        "入力されているテキストの最大
+set laststatus=2        "ステータスラインを常に表示
+set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=<%l/%L:%p%%> "ステータスラインに表示する情報の指定
+set showcmd             "コマンドをステータス行に表示
+set wildmenu            "コマンドライン補完を拡張モードにする
+set textwidth=0         "入力されているテキストの最大
 
 "**********************************************************
-"                         plugin
+"                                                 plugin
 "**********************************************************
 "----------------------------------------------------------
 "neocomplcache
-let g:neocomplcache_enable_at_startup=1           "enable neocomplcache
-let g:neocomplcache_enable_smart_case=1           "enable smartcase
-let g:neocomplcache_enable_underbar_completion=1  "enable underbar
+let g:neocomplcache_enable_at_startup=1            "enable neocomplcache
+let g:neocomplcache_enable_smart_case=1            "enable smartcase
+let g:neocomplcache_enable_underbar_completion=1   "enable underbar
 let g:neocomplcache_min_keyword_length=3
 let g:neocomplcache_min_syntax_length=3
 setlocal omnifunc=syntaxcomplete#Complete
 "辞書
 let g:neocomplcache_dictionary_filetype_lists = {
-  \ 'default'    : '',
-  \ 'cpp'        : $HOME . '/.vim/dict/cpp.dict',
-  \ 'objc'       : $HOME . '/.vim/dict/objc.dict',
-  \ 'c'          : $HOME . '/.vim/dict/c.dict',
-  \ 'javascript' : $HOME . '/.vim/dict/javascript.dict',
-  \ 'scala'      : $HOME . '/.vim/dict/scala.dict',
-  \ 'java'       : $HOME . '/.vim/dict/java.dict'
-  \ }
+    \ 'default'        : '',
+    \ 'cpp'            : $HOME . '/.vim/dict/cpp.dict',
+    \ 'objc'           : $HOME . '/.vim/dict/objc.dict',
+    \ 'c'              : $HOME . '/.vim/dict/c.dict',
+    \ 'javascript'     : $HOME . '/.vim/dict/javascript.dict',
+    \ 'scala'          : $HOME . '/.vim/dict/scala.dict',
+    \ 'java'           : $HOME . '/.vim/dict/java.dict'
+    \ }
 let g:neocomplcache_same_filetype_lists = {
-  \ 'objcpp'     : 'cpp,objc,c',
-  \ 'cpp'        : 'c',
-  \ 'objc'       : 'c'
-  \ }
+    \ 'objcpp'         : 'cpp,objc,c',
+    \ 'cpp'            : 'c',
+    \ 'objc'           : 'c'
+    \ }
 "コードスニペット
 let g:neocomplcache_snippets_dir = $HOME . '/.vim/snippets'
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
@@ -101,9 +100,9 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 "ref
 nnoremap :ref :Ref
 ""if has('mac')
-""  let $PATH = $PATH . '/usr/local/bin'
+""    let $PATH = $PATH . '/usr/local/bin'
 ""endif
-""let g:ref_alc_start_linenumber=39   "余計な行を読み飛ばす
+""let g:ref_alc_start_linenumber=39 "余計な行を読み飛ばす
 "----------------------------------------------------------
 "surround
 "----------------------------------------------------------
