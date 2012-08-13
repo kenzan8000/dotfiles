@@ -2,24 +2,24 @@
 "文字コード
 if has('win32' || 'win64')
 else
-  set enc=utf-8
-  set fenc=utf-8
-  set fencs=utf-8,iso-2022-jp,euc-jp,cp932
+    set enc=utf-8
+    set fenc=utf-8
+    set fencs=utf-8,iso-2022-jp,euc-jp,cp932
 endif
 "----------------------------------------------------------
 "フォント
 if has('mac')
-  set guifont=Ricty:h20
+    set guifont=Ricty:h20
 elseif has('win32' || 'win64')
 else
-  set guifont=Ricty\ 16
+    set guifont=Ricty\ 16
 endif
 "----------------------------------------------------------
 "カラー
 syntax on
 hi clear
 if exists("syntax_on")
-  syntax reset
+    syntax reset
 endif
 set bg=dark
 colorscheme black
@@ -31,7 +31,7 @@ autocmd! BufRead,BufNewFile *.mm set filetype=objcpp
 "ウィンドウ
 if has('win32' || 'win64')
 else
-  au GUIEnter * simalt ~x
+    au GUIEnter * simalt ~x
 endif
 "---------------------------------------------------------
 set hidden
@@ -48,9 +48,8 @@ set formatoptions+=mM  "テキスト挿入中の自動折り返しを日本語�
 "インデント・空白
 set smartindent        "自動インデント
 set nolist             "タブや改行を表示しない(ex:$,^I)
-set tabstop=4          "タブの空白数
-set softtabstop=4      "インデントの空白数
-set shiftwidth=4       "タブの代わりに空白を使わない
+set tabstop=4 softtabstop=4 shiftwidth=4                             "タブ・インデント幅
+autocmd FileType ruby,eruby set tabstop=2 softtabstop=2 shiftwidth=2 "Ruby
 set expandtab          "タブの代わりにスペースを使う
 autocmd BufWritePre * :%s/\s\+$//ge   "保存時に行末の空白を除去する
 "検索
@@ -78,29 +77,29 @@ let g:neocomplcache_min_syntax_length=3
 setlocal omnifunc=syntaxcomplete#Complete
 "辞書
 let g:neocomplcache_dictionary_filetype_lists = {
-  \ 'default'    : '',
-  \ 'cpp'        : $HOME . '/.vim/dict/cpp.dict',
-  \ 'objc'       : $HOME . '/.vim/dict/objc.dict',
-  \ 'c'          : $HOME . '/.vim/dict/c.dict',
-  \ 'javascript' : $HOME . '/.vim/dict/javascript.dict',
-  \ 'scala'      : $HOME . '/.vim/dict/scala.dict',
-  \ 'java'       : $HOME . '/.vim/dict/java.dict'
-  \ }
+    \ 'default'    : '',
+    \ 'cpp'        : $HOME . '/.vim/dict/cpp.dict',
+    \ 'objc'       : $HOME . '/.vim/dict/objc.dict',
+    \ 'c'          : $HOME . '/.vim/dict/c.dict',
+    \ 'javascript' : $HOME . '/.vim/dict/javascript.dict',
+    \ 'scala'      : $HOME . '/.vim/dict/scala.dict',
+    \ 'java'       : $HOME . '/.vim/dict/java.dict'
+    \ }
 let g:neocomplcache_same_filetype_lists = {
-  \ 'objcpp'     : 'cpp,objc,c',
-  \ 'cpp'        : 'c',
-  \ 'objc'       : 'c'
-  \ }
+    \ 'objcpp'     : 'cpp,objc,c',
+    \ 'cpp'        : 'c',
+    \ 'objc'       : 'c'
+    \ }
 "コードスニペット
 let g:neocomplcache_snippets_dir = $HOME . '/.vim/snippets'
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 "---------- ref ----------
 nnoremap :ref :Ref
-""if has('mac')
-""  let $PATH = $PATH . '/usr/local/bin'
-""endif
-""let g:ref_alc_start_linenumber=39   "余計な行を読み飛ばす
+"if has('mac')
+"   let $PATH = $PATH . '/usr/local/bin'
+"endif
+"let g:ref_alc_start_linenumber=39   "余計な行を読み飛ばす
 "---------- surround ----------
 
 "---------- align ----------
@@ -111,9 +110,9 @@ nnoremap :grep :GrepBuffer
 "---------- project ----------
 "カレントディレクトリにプロジェクト管理ファイルがあったら読み込む
 "if getcwd() != $HOME
-"    if filereadable(getcwd(). '/.vimprojects')
-"        Project .vimprojects
-"    endif
+"   if filereadable(getcwd(). '/.vimprojects')
+"       Project .vimprojects
+"   endif
 "endif
 let g:proj_flag = "imstc"   "ファイルが選択されたら、ウィンドウを閉じる
 "<Leader>p,<Leader>Pでトグルを開閉する
