@@ -118,3 +118,6 @@ let g:proj_flag = "imstc"   "ファイルが選択されたら、ウィンドウ
 "<Leader>p,<Leader>Pでトグルを開閉する
 nmap <silent> <Leader>P <Plug>ToggleProject
 nmap <silent> <Leader>p :Project<CR>
+"---------- project ----------
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=2

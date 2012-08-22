@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/hase_kenzan/workspace/fwamu/web/walk/js'
+let g:netrw_dirhist_2='/Users/hase_kenzan/workspace/pecori/pecori/Classes/UI/ViewController'
+let g:netrw_dirhist_3='/Users/hase_kenzan/workspace/pecori/pecori/Classes/UI/View'
+let g:netrw_dirhist_4='/Users/hase_kenzan/workspace/pecori/pecori/Classes/UI/ViewController'
+let g:netrw_dirhist_5='/Users/hase_kenzan/workspace/pecori/pecori/Classes/UI/View'
+let g:netrw_dirhist_6='/Users/hase_kenzan/workspace/pecori/pecori/Classes/UI/ViewController'
+let g:netrw_dirhist_7='/Users/hase_kenzan/workspace/pecolly/iPhone/trunk/pecolly/Classes/UI/View'
+let g:netrw_dirhist_8='/Users/hase_kenzan/workspace/pecolly/iPhone/trunk/pecolly'
+let g:netrw_dirhist_9='/Users/kenzan8000/Dropbox/workspace/design/webpage/css'
