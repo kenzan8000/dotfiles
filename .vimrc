@@ -64,9 +64,11 @@ set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=<%l/%L:%
 set showcmd            "コマンドをステータス行に表示
 set wildmenu           "コマンドライン補完を拡張モードにする
 set textwidth=0        "入力されているテキストの最大
+"シンタックスチェック
+autocmd FileType ruby,eruby :map <C-n> <ESC>:!ruby -cW %<CR>
 
 "**********************************************************
-"                         plugin
+"                        プラグイン
 "**********************************************************
 "---------- neocomplcache ----------
 let g:neocomplcache_enable_at_startup=1           "enable neocomplcache
@@ -96,28 +98,18 @@ imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 "---------- ref ----------
 nnoremap :ref :Ref
-"if has('mac')
-"   let $PATH = $PATH . '/usr/local/bin'
-"endif
-"let g:ref_alc_start_linenumber=39   "余計な行を読み飛ばす
 "---------- surround ----------
-
 "---------- align ----------
 vnoremap :al :Align
 let g:Align_xstrlen=3
 "---------- grep ----------
 nnoremap :grep :GrepBuffer
 "---------- project ----------
-"カレントディレクトリにプロジェクト管理ファイルがあったら読み込む
-"if getcwd() != $HOME
-"   if filereadable(getcwd(). '/.vimprojects')
-"       Project .vimprojects
-"   endif
-"endif
-let g:proj_flag = "imstc"   "ファイルが選択されたら、ウィンドウを閉じる
+"ファイルが選択されたら、ウィンドウを閉じる
+let g:proj_flag = "imstc"
 "<Leader>p,<Leader>Pでトグルを開閉する
 nmap <silent> <Leader>P <Plug>ToggleProject
 nmap <silent> <Leader>p :Project<CR>
-"---------- project ----------
+"---------- syntastic ----------
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
