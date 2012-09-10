@@ -99,23 +99,15 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 "---------- endwize ----------
 "neocomplcache, endwizeキーマッピング
 autocmd FileType ruby imap <buffer> <expr><CR>  pumvisible() ? neocomplcache#smart_close_popup()."\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd"
-"---------- ref ----------
-nnoremap :ref :Ref
+"---------- surround ----------
 "---------- align ----------
 vnoremap :al :Align
 let g:Align_xstrlen=3
-"---------- grep ----------
-nnoremap :grep :GrepBuffer
-"---------- project ----------
-"ファイルが選択されたら、ウィンドウを閉じる
-let g:proj_flag = "imstc"
-"<Leader>p,<Leader>Pでトグルを開閉する
-nmap <silent> <Leader>P <Plug>ToggleProject
-nmap <silent> <Leader>p :Project<CR>
 "---------- syntastic ----------
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
-"---------- surround ----------
+"---------- grep ----------
+nnoremap :grep :GrepBuffer
 "---------- zencoding ----------
 "{{{
 " codaのデフォルトと一緒にする
@@ -133,3 +125,17 @@ let g:user_zen_settings = {
     \  },
     \}
 "}
+"---------- open-browser ----------
+" カーソル下のURLをブラウザで開く
+nmap <Leader>o <Plug>(openbrowser-open)
+vmap <Leader>o <Plug>(openbrowser-open)
+" ググる
+nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
+"---------- project ----------
+"ファイルが選択されたら、ウィンドウを閉じる
+let g:proj_flag = "imstc"
+"<Leader>p,<Leader>Pでトグルを開閉する
+nmap <silent> <Leader>P <Plug>ToggleProject
+nmap <silent> <Leader>p :Project<CR>
+"---------- ref ----------
+nnoremap :ref :Ref
