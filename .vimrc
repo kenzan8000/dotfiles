@@ -96,9 +96,11 @@ let g:neocomplcache_same_filetype_lists = {
 let g:neocomplcache_snippets_dir = $HOME . '/.vim/snippets'
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
+"---------- endwize ----------
+"neocomplcache, endwizeキーマッピング
+autocmd FileType ruby imap <buffer> <expr><CR>  pumvisible() ? neocomplcache#smart_close_popup()."\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd"
 "---------- ref ----------
 nnoremap :ref :Ref
-"---------- surround ----------
 "---------- align ----------
 vnoremap :al :Align
 let g:Align_xstrlen=3
@@ -113,3 +115,4 @@ nmap <silent> <Leader>p :Project<CR>
 "---------- syntastic ----------
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
+"---------- surround ----------
