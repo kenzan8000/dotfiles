@@ -116,3 +116,20 @@ nmap <silent> <Leader>p :Project<CR>
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 "---------- surround ----------
+"---------- zencoding ----------
+"{{{
+" codaのデフォルトと一緒にする
+imap <C-E> <C-Y>,
+let g:user_zen_leader_key = '<C-Y>'
+" 言語別に対応させる
+let g:user_zen_settings = {
+    \  'lang' : 'ja',
+    \  'html' : {
+    \    'filters' : 'html',
+    \    'indentation' : ' '
+    \  },
+    \  'css' : {
+    \    'filters' : 'fc',
+    \  },
+    \}
+"}
