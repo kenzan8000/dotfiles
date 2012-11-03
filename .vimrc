@@ -27,6 +27,7 @@ colorscheme black
 "ファイル
 autocmd! BufRead,BufNewFile *.scala set filetype=scala
 autocmd! BufRead,BufNewFile *.mm set filetype=objcpp
+autocmd! BufRead,BufNewFile *.h set filetype=objcpp
 "---------------------------------------------------------
 "ウィンドウ
 if has('win32' || 'win64')
@@ -99,6 +100,14 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 "---------- endwize ----------
 "neocomplcache, endwizeキーマッピング
 autocmd FileType ruby imap <buffer> <expr><CR>  pumvisible() ? neocomplcache#smart_close_popup()."\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd"
+"---------- smartchr ----------
+"直後に空白を入れる
+inoremap <expr> = smartchr#one_of('= ', '== ', '=== ', '=')
+inoremap <expr> , smartchr#one_of(', ', ',')
+inoremap <expr> { smartchr#one_of('{ ', '{')
+autocmd FileType objcpp,cpp,objc,javascript,java,c inoremap <expr> ; smartchr#one_of(';<CR>', ';')
+"直前に空白を入れる
+inoremap <expr> ( smartchr#one_of(' (', '(')
 "---------- surround ----------
 "---------- align ----------
 vnoremap :al :Align
@@ -110,10 +119,10 @@ let g:syntastic_auto_loc_list=2
 nnoremap :grep :GrepBuffer
 "---------- zencoding ----------
 "{{{
-" codaのデフォルトと一緒にする
+"codaのデフォルトと一緒にする
 imap <C-E> <C-Y>,
 let g:user_zen_leader_key = '<C-Y>'
-" 言語別に対応させる
+"言語別に対応させる
 let g:user_zen_settings = {
     \  'lang' : 'ja',
     \  'html' : {
@@ -126,10 +135,10 @@ let g:user_zen_settings = {
     \}
 "}
 "---------- open-browser ----------
-" カーソル下のURLをブラウザで開く
+"カーソル下のURLをブラウザで開く
 nmap <Leader>o <Plug>(openbrowser-open)
 vmap <Leader>o <Plug>(openbrowser-open)
-" ググる
+"ググる
 nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 "---------- project ----------
 "ファイルが選択されたら、ウィンドウを閉じる
