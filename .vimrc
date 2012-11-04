@@ -106,9 +106,7 @@ inoremap <expr> = smartchr#one_of('= ', '== ', '=== ', '=')
 inoremap <expr> , smartchr#one_of(', ', ',')
 inoremap <expr> { smartchr#one_of('{ ', '{')
 "直後に改行を入れる
-autocmd FileType objcpp,cpp,objc,javascript,java,c inoremap <expr> ; smartchr#one_of(';<CR>', ';')
 "直前に空白を入れる
-inoremap <expr> ( smartchr#one_of(' (', '(')
 "---------- surround ----------
 "---------- align ----------
 vnoremap :al :Align
