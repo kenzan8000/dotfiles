@@ -39,7 +39,7 @@ hi DiffText     guifg=fg        guibg=#dd0000   gui=none    ctermfg=fg          
 
 hi Cursor       guifg=bg        guibg=fg        gui=none    ctermfg=bg           ctermbg=fg        cterm=none
 hi lCursor      guifg=bg        guibg=fg        gui=none    ctermfg=bg           ctermbg=fg        cterm=none
-hi CursorIM     guibg=darkred   guifg=NONE
+hi CursorIM     guibg=darkred   guifg=none
 
 hi Comment      guifg=#008800   guibg=bg        gui=none    ctermfg=darkgreen    ctermbg=bg        cterm=none
 hi Operator     guifg=#ffffff   guibg=bg        gui=none    ctermfg=fg           ctermbg=bg        cterm=none

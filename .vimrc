@@ -65,6 +65,8 @@ set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=<%l/%L:%
 set showcmd            "コマンドをステータス行に表示
 set wildmenu           "コマンドライン補完を拡張モードにする
 set textwidth=0        "入力されているテキストの最大
+"カーソルライン
+set cursorline
 "シンタックスチェック
 autocmd FileType ruby,eruby :map <C-n> <ESC>:!ruby -cW %<CR>
 
