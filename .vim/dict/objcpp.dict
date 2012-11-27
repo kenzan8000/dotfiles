@@ -407,6 +407,14 @@ int32Value]
 integerValue]
 stringValue]
 
+initWith
+arrayWith
+dataWith
+dictionaryWith
+errorWith
+numberWith
+stringWith
+
 UIAcceleration
 UIAccelerometer
 UIAccelerometerDelegate
