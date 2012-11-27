@@ -74,29 +74,33 @@ autocmd FileType ruby,eruby :map <C-n> <ESC>:!ruby -cW %<CR>
 "                        プラグイン
 "**********************************************************
 "---------- neocomplcache ----------
-let g:neocomplcache_enable_at_startup=1           "enable neocomplcache
-let g:neocomplcache_enable_smart_case=1           "enable smartcase
-let g:neocomplcache_enable_underbar_completion=1  "enable underbar
+let g:neocomplcache_enable_at_startup=1           "neocomplcacheを有効にする
+let g:neocomplcache_enable_smart_case=1           "smartcaseを有効にする
+let g:neocomplcache_enable_underbar_completion=1  "underbarを有効にする
 let g:neocomplcache_min_keyword_length=3
 let g:neocomplcache_min_syntax_length=3
 setlocal omnifunc=syntaxcomplete#Complete
+let g:neocomplcache_same_filetype_lists =  {
+    \ 'objcpp' : 'cpp, objc, c',
+    \ 'cpp'    : 'c',
+    \ 'objc'   : 'c'
+    \ }
 "辞書
 let g:neocomplcache_dictionary_filetype_lists = {
     \ 'default'    : '',
     \ 'cpp'        : $HOME . '/.vim/dict/cpp.dict',
     \ 'objc'       : $HOME . '/.vim/dict/objc.dict',
-    \ 'c'          : $HOME . '/.vim/dict/c.dict',
+    \ 'objcpp'     : $HOME . '/.vim/dict/objcpp.dict',
     \ 'javascript' : $HOME . '/.vim/dict/javascript.dict',
     \ 'scala'      : $HOME . '/.vim/dict/scala.dict',
     \ 'java'       : $HOME . '/.vim/dict/java.dict'
     \ }
-let g:neocomplcache_same_filetype_lists = {
-    \ 'objcpp'     : 'cpp,objc,c',
-    \ 'cpp'        : 'c',
-    \ 'objc'       : 'c'
-    \ }
 "コードスニペット
 let g:neocomplcache_snippets_dir = $HOME . '/.vim/snippets'
+if has('mac')
+    let g:neocomplcache_clang_use_library = 1
+    let g:neocomplcache_clang_library_path = '/usr/lib'
+endif
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 "---------- endwize ----------

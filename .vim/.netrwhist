@@ -1,4 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/kenzan8000/Dropbox/workspace/iPhone/galspanic/galspanic.xcodeproj'
 let g:netrw_dirhist_2='/Users/kenzan8000/.vim'
+let g:netrw_dirhist_3='/Users/hase_kenzan/Dropbox/workspace/iPhone/gals_panic/galspanic'
+let g:netrw_dirhist_4='/Users/kenzan8000/.vim/dict'
+let g:netrw_dirhist_5='/Users/kenzan8000/Downloads/cocoa/lib/cocoa_indexes'
