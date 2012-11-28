@@ -80,11 +80,6 @@ let g:neocomplcache_enable_underbar_completion=1  "underbarを有効にする
 let g:neocomplcache_min_keyword_length=3
 let g:neocomplcache_min_syntax_length=3
 setlocal omnifunc=syntaxcomplete#Complete
-let g:neocomplcache_same_filetype_lists =  {
-    \ 'objcpp' : 'cpp, objc, c',
-    \ 'cpp'    : 'c',
-    \ 'objc'   : 'c'
-    \ }
 "辞書
 let g:neocomplcache_dictionary_filetype_lists = {
     \ 'default'    : '',

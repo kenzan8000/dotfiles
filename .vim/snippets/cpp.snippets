@@ -1,30 +1,102 @@
-# Read File Into Vector
-snippet readfile
-	std::vector<char> v;
-	if (FILE *${2:fp} = fopen(${1:"filename"}, "r")) {
-		char buf[1024];
-		while (size_t len = fread(buf, 1, sizeof(buf), $2))
-			v.insert(v.end(), buf, buf + len);
-		fclose($2);
-	}${3}
-# std::map
-snippet map
-	std::map<${1:key}, ${2:value}> map${3};
-# std::vector
-snippet vector
-	std::vector<${1:char}> v${2};
-# Namespace
-snippet ns
-	namespace ${1:`Filename('', 'my')`} {
+#################### c ####################
+snippet #inc
+	#include ${1}
+
+snippet #def
+	#define ${1}
+
+snippet #if
+	#ifdef ${1}
+	#endif
+
+snippet #ifn
+	#ifndef ${1}
+	#endif
+
+snippet #pra
+	#pragma mark - ${1}
+
+snippet if
+	if (${1}) {
 		${2}
-	} /* $1 */
-# Class
-snippet cl
-	class ${1:`Filename('$1_t', 'name')`} {
+	}
+
+snippet else
+	else {
+		${1}
+	}
+
+snippet switch
+	switch (${1}) {
+		case '${2}':
+			${3}
+			break;
+		default:
+			${4}
+	}
+
+snippet case
+	case '${1}':
+		${2}
+		break;
+
+snippet while
+	while (${1}) {
+		${2}
+	}
+
+snippet for
+	for (${1}) {
+		${2}
+	}
+
+snippet func
+	${1} ${2}(${3})
+	{
+		${4}
+	}
+
+
+#################### cpp ####################
+snippet std::vec
+	std::vector<${1}> ${2};
+
+snippet class
+	#pragma mark - class
+	class ${1} {
+
 	public:
-		$1 (${2:arguments});
-		virtual ~$1 ();
-	
+	#pragma mark - initializer
+		$1(${2});
+
+
+	#pragma mark - release
+		~$1();
+
+
+	#pragma mark - public api
+
+
+	#pragma mark - public constant
+
+
+	#pragma mark - public variable
+
+
 	private:
-		${3:/* data */}
+	#pragma mark - private api
+
+
+	#pragma mark - private constant
+
+
+	#pragma mark - private variable
+
+
 	};
+
+snippet cpp_method
+	${1} ${2}::${3}(${4})
+	{
+		${5}
+	}
