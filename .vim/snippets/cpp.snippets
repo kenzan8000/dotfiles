@@ -1,19 +1,19 @@
 #################### c ####################
-snippet #inc
+snippet #include
 	#include ${1}
 
-snippet #def
+snippet #define
 	#define ${1}
 
-snippet #if
+snippet #ifdef
 	#ifdef ${1}
 	#endif
 
-snippet #ifn
+snippet #ifndef
 	#ifndef ${1}
 	#endif
 
-snippet #pra
+snippet #pragma
 	#pragma mark - ${1}
 
 snippet if
@@ -36,7 +36,7 @@ snippet switch
 	}
 
 snippet case
-	case '${1}':
+	case ${1}:
 		${2}
 		break;
 
@@ -58,7 +58,7 @@ snippet func
 
 
 #################### cpp ####################
-snippet std::vec
+snippet std::vector
 	std::vector<${1}> ${2};
 
 snippet class

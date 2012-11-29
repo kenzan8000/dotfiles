@@ -1,19 +1,19 @@
 #################### c ####################
-snippet #inc
+snippet #include
 	#include ${1}
 
-snippet #def
+snippet #define
 	#define ${1}
 
-snippet #if
+snippet #ifdef
 	#ifdef ${1}
 	#endif
 
-snippet #ifn
+snippet #ifndef
 	#ifndef ${1}
 	#endif
 
-snippet #pra
+snippet #pragma
 	#pragma mark - ${1}
 
 snippet if
@@ -36,7 +36,7 @@ snippet switch
 	}
 
 snippet case
-	case '${1}':
+	case ${1}:
 		${2}
 		break;
 
@@ -58,7 +58,7 @@ snippet func
 
 
 #################### cpp ####################
-snippet std::vec
+snippet std::vector
 	std::vector<${1}> ${2};
 
 snippet class
@@ -96,7 +96,7 @@ snippet class
 	};
 
 snippet cpp_method
-	${1} ${2:}::${3}(${4})
+	${1} ${2}::${3}(${4})
 	{
 		${5}
 	}
@@ -105,7 +105,7 @@ snippet cpp_method
 #################### objc ####################
 
 ##### header #####
-snippet @inter
+snippet @interface
 	#pragma mark - interface
 	@interface ${1} {
 	}
@@ -120,7 +120,7 @@ snippet @inter
 	@end
 
 ##### source #####
-snippet @imp
+snippet @implementation
 	@implementation ${1}
 
 
@@ -160,35 +160,35 @@ snippet class_method
 	}
 
 ##### syntax #####
-snippet #imp
+snippet #import
 	#import ${1}
 
-snippet @pro
+snippet @property
 	@property (${1}) ${2};
 
-snippet IBO
+snippet IBOutlet
 	IBOutlet ${1} *${2};
 
-snippet IBA
+snippet - (IBAction)
 	- (IBAction)${1}:(${2} *)${3}
 
-snippet @syn
+snippet @synthesize
 	@synthesize ${1};
 
 snippet alloc
 	[[${1} alloc] init${2}]
 
-snippet reta
+snippet retain
 	[${1} retain]
 
-snippet rel
+snippet release
 	[${1} release]
 
-snippet autor
+snippet autorelease
 	[${1} autorelease]
 
-snippet @sel
+snippet @selector
 	@selector(${1})
 
-snippet NSLocali
+snippet NSLocalizedString
 	NSLocalizedString(@"${1}", ${2})
