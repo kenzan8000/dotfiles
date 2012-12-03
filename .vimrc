@@ -121,7 +121,7 @@ let g:user_zen_settings = {
     \  'lang' : 'ja',
     \  'html' : {
     \    'filters' : 'html',
-    \    'indentation' : ' '
+    \    'indentation' : '    '
     \  },
     \  'css' : {
     \    'filters' : 'fc',
