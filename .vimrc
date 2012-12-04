@@ -84,11 +84,9 @@ setlocal omnifunc=syntaxcomplete#Complete
 let g:neocomplcache_dictionary_filetype_lists = {
     \ 'default'    : '',
     \ 'cpp'        : $HOME . '/.vim/dict/cpp.dict',
+    \ 'javascript' : $HOME . '/.vim/dict/javascript.dict',
     \ 'objc'       : $HOME . '/.vim/dict/objc.dict',
     \ 'objcpp'     : $HOME . '/.vim/dict/objcpp.dict',
-    \ 'javascript' : $HOME . '/.vim/dict/javascript.dict',
-    \ 'scala'      : $HOME . '/.vim/dict/scala.dict',
-    \ 'java'       : $HOME . '/.vim/dict/java.dict'
     \ }
 "コードスニペット
 let g:neocomplcache_snippets_dir = $HOME . '/.vim/snippets'

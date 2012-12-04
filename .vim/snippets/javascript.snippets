@@ -1,11 +1,16 @@
+#################### JavaScript ####################
+
+snippet var
+	var ${1:name} = ${2:value};
+
 snippet if
 	if (${1:true}) {
-		${2}
+	    ${2}
 	}
 
 snippet else
 	else {
-		${3}
+		${1}
 	}
 
 snippet switch
@@ -25,14 +30,128 @@ snippet case
 snippet for
 	for (${1}) {
 		${2}
-	};
+	}
 
 snippet while
 	while (${1:/* condition */}) {
 		${2:/* code */}
 	}
 
-snippet func
-	function ${1:function_name} (${2:argument}) {
-		${3:// body...}
-	}
+snippet function
+	function ${1:function_name} (${2:argument}) { ${3:// body...} }
+
+snippet (function
+	(function(${1:argument}) { ${2:// body} }())
+
+snippet setTimeout
+	setTimeout(function() { ${2} }, ${1:ms})
+
+snippet setInterval
+	setInterval(function() { ${2} }, ${1:ms})
+
+snippet getElementBy
+	getElementsBy${1:Id/TagName}('${2}')
+
+snippet console.log
+	console.log(${1})
+
+
+#################### jQuery ####################
+
+snippet ready
+	jQuery(document).ready(function($) { ${1:// add initialize calls} })
+
+snippet when
+	jQuery.when(${1:jQuery.get(),...})
+		.done(function(${2:args,...}) { ${3:// done...} })
+		.fail(function() { ${4:// fail...} });
+
+snippet when.apply
+	jQuery.when.apply(null, ${1:deferredObjects})
+		.done(function(${2:arg}) { ${3:// done...} })
+		.fail(function() { ${4:// fail...} });
+
+snippet add
+	add('${1:selector/elements/html}')
+
+snippet addClass
+	addClass('${1:className}')
+
+snippet after
+	after('${1:content}')
+
+snippet animate
+	animate({${1:props}}, ${2:duration}, '${3:easing}', function () { ${4:// handle complete...} })
+
+snippet append
+	append('${1:content}')
+
+snippet appendTo
+	appendTo(${1:selector})
+
+snippet attr
+	attr(${1:attrName}, ${2:value or function})
+
+snippet before
+	before('${1:content}')
+
+snippet bind
+	bind('${1:eventName}', ${2:handler})
+
+snippet click
+	click(${1:handler})
+
+snippet clone
+	clone()
+
+snippet contains
+	contains('${1:find}')
+
+snippet css
+	css(${1:get or set})
+
+snippet each
+	each(function(index) { ${1:// Act on the iteration} })
+
+snippet empty
+	empty()
+
+snippet filter
+	filter(${1:selector/function})
+
+snippet find
+	find('${1:selector}')
+
+snippet get
+	get(${1:[index]})
+
+snippet has
+	has(${1:selector})
+
+snippet hasClass
+	hasClass('${1:className}')
+
+snippet load
+	load(${1:handler})
+
+snippet remove
+	remove(${1:[selector]})
+
+snippet removeAttr
+	removeAttr('${1:attributeName}')
+
+snippet removeClass
+	removeClass('${1:className}')
+
+snippet text
+	text(${1})
+
+snippet toArray
+	toArray()
+
+snippet unbind
+	unbind('${1:eventName}', ${2:handler})
+
+snippet unload
+	unload(${1:handler})
+
