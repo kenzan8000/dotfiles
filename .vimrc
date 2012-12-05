@@ -118,6 +118,18 @@ if has('mac')
     let g:neocomplcache_clang_use_library = 1
     let g:neocomplcache_clang_library_path = '/usr/lib'
 endif
+"neocomplecache + rsense
+if has('mac')
+    let g:rsenseHome = '/usr/local/Cellar/rsense/0.3'
+    let g:rsenseUseOmniFunc = 1
+    if !exists('g:neocomplcache_omni_patterns')
+        let g:neocomplcache_omni_patterns = {}
+    endif
+elseif has('win32' || 'win64')
+else
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+"キーマッピング
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 "---------- endwize ----------
