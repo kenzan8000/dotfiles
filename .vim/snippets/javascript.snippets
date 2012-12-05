@@ -1,5 +1,4 @@
 #################### JavaScript ####################
-
 snippet var
 	var ${1:name} = ${2:value};
 
@@ -55,9 +54,15 @@ snippet getElementBy
 snippet console.log
 	console.log(${1})
 
+########## ECMAScript5 ##########
+snippet forEach
+	${1:array}.forEach(function(value, index, context) { ${2:iteration} });
+
+snippet map
+	map(function(value, index, context) { ${1:return new value} })
+
 
 #################### jQuery ####################
-
 snippet ready
 	jQuery(document).ready(function($) { ${1:// add initialize calls} })
 
@@ -111,7 +116,7 @@ snippet css
 	css(${1:get or set})
 
 snippet each
-	each(function(index) { ${1:// Act on the iteration} })
+	each(${1:array}, function(index, value) { ${2:iteration} })
 
 snippet empty
 	empty()
@@ -125,14 +130,26 @@ snippet find
 snippet get
 	get(${1:[index]})
 
+snippet grep
+    grep(${1:array}, function(value, index) { ${2:compare} })
+
 snippet has
 	has(${1:selector})
 
 snippet hasClass
 	hasClass('${1:className}')
 
+snippet inArray
+	inArray(${1:needle}, ${2:array})
+
 snippet load
 	load(${1:handler})
+
+snippet map(jQuery)
+	map(${1:array}, function(value, index) { ${2:return new value} })
+
+snippet merge
+	merge(${1:arrayA}, ${2:arrayB})
 
 snippet remove
 	remove(${1:[selector]})
@@ -151,6 +168,9 @@ snippet toArray
 
 snippet unbind
 	unbind('${1:eventName}', ${2:handler})
+
+snippet unique
+	unique(${1:array})
 
 snippet unload
 	unload(${1:handler})

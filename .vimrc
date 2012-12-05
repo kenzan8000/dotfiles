@@ -69,6 +69,8 @@ set textwidth=0        "入力されているテキストの最大
 set cursorline
 "シンタックスチェック
 autocmd FileType ruby,eruby :map <C-n> <ESC>:!ruby -cW %<CR>
+"最初のヤンクを連続でペースト
+vnoremap <silent> <C-p> "0p<CR>
 
 "**********************************************************
 "                        プラグイン
