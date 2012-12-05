@@ -73,6 +73,28 @@ autocmd FileType ruby,eruby :map <C-n> <ESC>:!ruby -cW %<CR>
 "**********************************************************
 "                        プラグイン
 "**********************************************************
+"---------- neobundle ----------
+set nocompatible
+filetype plugin indent off
+if has('vim_starting')
+    set runtimepath+=~/.vim/neobundle.vim.git
+    call neobundle#rc(expand('~/.vim/.bundle/'))
+endif
+NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
+"NeoBundle 'https://github.com/Shougo/neocomplcache.git'
+NeoBundle 'https://github.com/rhysd/endwize.vim.git'
+NeoBundle 'https://github.com/vim-scripts/smartchr.git'
+NeoBundle 'https://github.com/tpope/vim-surround.git'
+NeoBundle 'https://github.com/tsaleh/vim-align.git'
+NeoBundle 'https://github.com/scrooloose/syntastic.git'
+NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
+NeoBundle 'https://github.com/mattn/zencoding-vim.git'
+NeoBundle 'https://github.com/tyru/open-browser.vim.git'
+NeoBundle 'https://github.com/tyru/urilib.vim.git'
+NeoBundle 'https://github.com/rickard/project.vim.git'
+NeoBundle 'https://github.com/vim-scripts/ref.vim.git'
+NeoBundle 'https://github.com/Shougo/unite.vim.git'
+filetype plugin indent on
 "---------- neocomplcache ----------
 let g:neocomplcache_enable_at_startup=1           "neocomplcacheを有効にする
 let g:neocomplcache_enable_smart_case=1           "smartcaseを有効にする
@@ -110,7 +132,6 @@ let g:syntastic_auto_loc_list=2
 "---------- grep ----------
 nnoremap :grep :GrepBuffer
 "---------- zencoding ----------
-"{{{
 "codaのデフォルトと一緒にする
 imap <C-E> <C-Y>,
 let g:user_zen_leader_key = '<C-Y>'
@@ -125,13 +146,13 @@ let g:user_zen_settings = {
     \    'filters' : 'fc',
     \  },
     \}
-"}
 "---------- open-browser ----------
 "カーソル下のURLをブラウザで開く
 nmap <Leader>o <Plug>(openbrowser-open)
 vmap <Leader>o <Plug>(openbrowser-open)
 "ググる
 nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
+"---------- urilib ----------
 "---------- project ----------
 "ファイルが選択されたら、ウィンドウを閉じる
 let g:proj_flag = "imstc"
@@ -140,3 +161,4 @@ nmap <silent> <Leader>P <Plug>ToggleProject
 nmap <silent> <Leader>p :Project<CR>
 "---------- ref ----------
 nnoremap :ref :Ref
+"---------- unite ----------
