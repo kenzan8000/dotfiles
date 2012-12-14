@@ -22,7 +22,11 @@ if exists("syntax_on")
     syntax reset
 endif
 set bg=dark
-colorscheme black
+if has('gui_macvim')
+    colorscheme macvim
+else
+    colorscheme black
+endif
 "---------------------------------------------------------
 "ファイル
 autocmd! BufRead,BufNewFile *.scala set filetype=scala
