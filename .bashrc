@@ -1,5 +1,6 @@
 #mac
 if [ `uname` = "Darwin" ]; then
+
     #browser
     alias chrome='open -a /Applications/Google\ Chrome.app'
     alias firefox='open -a /Applications/Firefox.app'
@@ -19,13 +20,14 @@ if [ `uname` = "Darwin" ]; then
     #sound
     alias itunes='open -a /Applications/iTunes.app'
     #the others
+    alias edit-server='edit-server /Applications/MacVim.app/Contents/MacOS/MacVim'
     alias libre='open -a /Applications/LibreOffice.app'
     alias calc='open -a /Applications/Calculator.app'
     alias keychain='open -a /Applications/Utilities/Keychain\ Access.app'
 
-    [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+    export PATH=/usr/local/bin:$PATH
     PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-    [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 #linux
 #elif [ `uname` = "Linux" ]; then
