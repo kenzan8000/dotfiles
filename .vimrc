@@ -30,7 +30,8 @@ autocmd! BufRead,BufNewFile *.mm set filetype=objcpp
 autocmd! BufRead,BufNewFile *.h set filetype=objcpp
 "---------------------------------------------------------
 "ウィンドウ
-if has('win32' || 'win64')
+if has('mac')
+elseif has('win32' || 'win64')
 else
     au GUIEnter * simalt ~x
 endif
@@ -125,10 +126,10 @@ if has('mac')
     if !exists('g:neocomplcache_omni_patterns')
         let g:neocomplcache_omni_patterns = {}
     endif
+    let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 elseif has('win32' || 'win64')
 else
 endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "キーマッピング
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
