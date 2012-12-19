@@ -47,6 +47,7 @@ set history=100        "コマンド、検索パターンを100個まで履歴�
 set showmatch          "括弧入力時の対応する括弧を表示
 set matchtime=2        "対応する括弧の表示時間を2にする
 set scrolloff=1000     "カーソル位置を画面の中心にする
+set clipboard=unnamed  "ヤンクしたテキストをクリップボードに保存する
 "行
 set number             "行番号を表示
 set wrap               "折り返して次の行に表示する
@@ -131,8 +132,6 @@ if has('mac')
         let g:neocomplcache_omni_patterns = {}
     endif
     let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-elseif has('win32' || 'win64')
-else
 endif
 "キーマッピング
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
