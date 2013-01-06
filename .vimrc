@@ -89,7 +89,8 @@ if has('vim_starting')
     call neobundle#rc(expand('~/.vim/.bundle/'))
 endif
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
-"NeoBundle 'https://github.com/Shougo/neocomplcache.git'
+NeoBundle 'https://github.com/Shougo/neocomplcache.git'
+"NeoBundle 'https://github.com/Rip-Rip/clang_complete.git'
 NeoBundle 'https://github.com/rhysd/endwize.vim.git'
 NeoBundle 'https://github.com/vim-scripts/smartchr.git'
 NeoBundle 'https://github.com/tpope/vim-surround.git'
@@ -119,19 +120,26 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ 'objcpp'     : $HOME . '/.vim/dict/objcpp.dict',
     \ }
 "コードスニペット
-let g:neocomplcache_snippets_dir = $HOME . '/.vim/snippets'
+let g:neocomplcache_snippets_dir=$HOME . '/.vim/snippets'
 if has('mac')
-    let g:neocomplcache_clang_use_library = 1
-    let g:neocomplcache_clang_library_path = '/usr/lib'
-endif
-"neocomplecache + rsense
-if has('mac')
+    "neocomplecache + rsense
     let g:rsenseHome = '/usr/local/Cellar/rsense/0.3'
-    let g:rsenseUseOmniFunc = 1
+    let g:rsenseUseOmniFunc=1
     if !exists('g:neocomplcache_omni_patterns')
         let g:neocomplcache_omni_patterns = {}
     endif
     let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+    "neocomplecache + clang_complete
+    if !exists('g:neocomplcache_force_omni_patterns')
+        let g:neocomplcache_force_omni_patterns = {}
+    endif
+    let g:neocomplcache_force_overwrite_completefunc=1
+    let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+    let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+    let g:neocomplcache_force_omni_patterns.objc = '[^.[:digit:] *\t]\%(\.\|->\)'
+    let g:neocomplcache_force_omni_patterns.objcpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+    let g:clang_complete_auto=0
+    let g:clang_auto_select=0
 endif
 "キーマッピング
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
@@ -173,7 +181,7 @@ nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 "---------- urilib ----------
 "---------- project ----------
 "ファイルが選択されたら、ウィンドウを閉じる
-let g:proj_flag = "imstc"
+let g:proj_flag="imstc"
 "<Leader>p,<Leader>Pでトグルを開閉する
 nmap <silent> <Leader>P <Plug>ToggleProject
 nmap <silent> <Leader>p :Project<CR>
