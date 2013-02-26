@@ -89,7 +89,7 @@ if has('vim_starting')
     call neobundle#rc(expand('~/.vim/.bundle/'))
 endif
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'https://github.com/Shougo/neocomplcache.git'
+"NeoBundle 'https://github.com/Shougo/neocomplcache.git'
 "NeoBundle 'https://github.com/Rip-Rip/clang_complete.git'
 NeoBundle 'https://github.com/rhysd/endwize.vim.git'
 NeoBundle 'https://github.com/vim-scripts/smartchr.git'
@@ -101,6 +101,7 @@ NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/tyru/open-browser.vim.git'
 NeoBundle 'https://github.com/tyru/urilib.vim.git'
 NeoBundle 'https://github.com/rickard/project.vim.git'
+NeoBundle 'https://github.com/vim-scripts/taglist.vim.git'
 NeoBundle 'https://github.com/vim-scripts/ref.vim.git'
 NeoBundle 'https://github.com/Shougo/unite.vim.git'
 filetype plugin indent on
@@ -185,6 +186,13 @@ let g:proj_flag="imstc"
 "<Leader>p,<Leader>Pでトグルを開閉する
 nmap <silent> <Leader>P <Plug>ToggleProject
 nmap <silent> <Leader>p :Project<CR>
+"---------- taglist ----------
+set tags=tags
+let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+let Tlist_Show_One_File=1
+let Tlist_Use_Right_Window=1
+let Tlist_Exit_OnlyWindow=1
+map <silent> <leader>t :TlistToggle<CR>
 "---------- ref ----------
 nnoremap :ref :Ref
 "---------- unite ----------
