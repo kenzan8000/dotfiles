@@ -31,6 +31,7 @@ endif
 "ファイル
 autocmd! BufRead,BufNewFile *.scala set filetype=scala
 autocmd! BufRead,BufNewFile *.mm set filetype=objcpp
+autocmd! BufRead,BufNewFile *.m set filetype=objc
 autocmd! BufRead,BufNewFile *.h set filetype=objcpp
 "---------------------------------------------------------
 "ウィンドウ
@@ -192,7 +193,7 @@ let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 let Tlist_Show_One_File=1
 let Tlist_Use_Right_Window=1
 let Tlist_Exit_OnlyWindow=1
-map <silent> <leader>t :TlistToggle<CR>
+map <silent> <leader>T :TlistToggle<CR>
 "---------- ref ----------
 nnoremap :ref :Ref
 "---------- unite ----------
