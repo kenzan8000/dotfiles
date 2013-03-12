@@ -30,7 +30,7 @@ endif
 "---------------------------------------------------------
 "ファイル
 autocmd! BufRead,BufNewFile *.scala set filetype=scala
-autocmd! BufRead,BufNewFile *.mm set filetype=objcpp
+autocmd! BufRead,BufNewFile *.mm set filetype=objc
 autocmd! BufRead,BufNewFile *.m set filetype=objc
 autocmd! BufRead,BufNewFile *.h set filetype=objcpp
 "---------------------------------------------------------
