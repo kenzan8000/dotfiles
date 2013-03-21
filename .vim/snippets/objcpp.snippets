@@ -1,0 +1,194 @@
+#################### c ####################
+snippet #include
+	#include ${1}
+
+snippet #define
+	#define ${1}
+
+snippet #ifdef
+	#ifdef ${1}
+	#endif
+
+snippet #ifndef
+	#ifndef ${1}
+	#endif
+
+snippet #pragma
+	#pragma mark - ${1}
+
+snippet if
+	if (${1}) {
+		${2}
+	}
+
+snippet else
+	else {
+		${1}
+	}
+
+snippet switch
+	switch (${1}) {
+		case '${2}':
+			${3}
+			break;
+		default:
+			${4}
+	}
+
+snippet case
+	case ${1}:
+		${2}
+		break;
+
+snippet while
+	while (${1}) {
+		${2}
+	}
+
+snippet for
+	for (${1}) {
+		${2}
+	}
+
+snippet func
+	${1} ${2}(${3})
+	{
+		${4}
+	}
+
+
+#################### cpp ####################
+snippet std::vector
+	std::vector<${1}> ${2};
+
+snippet class
+	#pragma mark - class
+	class ${1} {
+
+	public:
+	#pragma mark - initializer
+		$1(${2});
+
+
+	#pragma mark - release
+		~$1();
+
+
+	#pragma mark - public api
+
+
+	#pragma mark - public constant
+
+
+	#pragma mark - public variable
+
+
+	private:
+	#pragma mark - private api
+
+
+	#pragma mark - private constant
+
+
+	#pragma mark - private variable
+
+
+	};
+
+snippet cpp_method
+	${1} ${2}::${3}(${4})
+	{
+		${5}
+	}
+
+
+#################### objc ####################
+
+##### header #####
+snippet @interface
+	#pragma mark - interface
+	@interface ${1} {
+	}
+
+
+	#pragma mark - property
+
+
+	#pragma mark - api
+
+
+	@end
+
+##### source #####
+snippet @implementation
+	@implementation ${1}
+
+
+	#pragma mark - synthesize
+
+
+	#pragma mark - initializer
+
+
+	#pragma mark - release
+
+
+	#pragma mark - lifecycle
+
+
+	#pragma mark - delegate
+
+
+	#pragma mark - event listener
+
+
+	#pragma mark - api
+
+
+	@end
+
+snippet method
+	- (${1})${2}
+	{
+		${3}
+	}
+
+snippet class_method
+	+ (${1})${2}
+	{
+		${3}
+	}
+
+##### syntax #####
+snippet #import
+	#import ${1}
+
+snippet @property
+	@property (${1}) ${2};
+
+snippet IBOutlet
+	IBOutlet ${1} *${2};
+
+snippet - (IBAction)
+	- (IBAction)${1}:(${2} *)${3}
+
+snippet @synthesize
+	@synthesize ${1};
+
+snippet alloc
+	[[${1} alloc] init${2}]
+
+snippet retain
+	[${1} retain]
+
+snippet release
+	[${1} release]
+
+snippet autorelease
+	[${1} autorelease]
+
+snippet @selector
+	@selector(${1})
+
+snippet NSLocalizedString
+	NSLocalizedString(@"${1}", ${2})

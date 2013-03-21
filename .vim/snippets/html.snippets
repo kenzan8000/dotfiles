@@ -1,0 +1,80 @@
+#################### Some useful Unicode entities ####################
+# Non-Breaking Space
+snippet nbs
+	&nbsp;
+# ←
+snippet left
+	&#x2190;
+# →
+snippet right
+	&#x2192;
+# ↑
+snippet up
+	&#x2191;
+# ↓
+snippet down
+	&#x2193;
+# ↩
+snippet return
+	&#x21A9;
+# ⇤
+snippet backtab
+	&#x21E4;
+# ⇥
+snippet tab
+	&#x21E5;
+# ⇧
+snippet shift
+	&#x21E7;
+# ⌃
+snippet control
+	&#x2303;
+# ⌅
+snippet enter
+	&#x2305;
+# ⌘
+snippet command
+	&#x2318;
+# ⌥
+snippet option
+	&#x2325;
+# ⌦
+snippet delete
+	&#x2326;
+# ⌫
+snippet backspace
+	&#x232B;
+# ⎋
+snippet escape
+	&#x238B;
+
+
+#################### tags ####################
+snippet <!DOCTYPE HTML>
+	<!DOCTYPE HTML>
+
+snippet head
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+	</head>
+
+snippet script-type
+	<script type="text/javascript" charset="utf-8">
+		${1}
+	</script>
+
+snippet script-src
+	<script src="${1}.js" type="text/javascript" charset="utf-8"></script>
+
+snippet style-type
+	<style type="text/css">
+		${1}
+	</style>
+
+snippet link-href
+	<link href="${1}.css" rel="stylesheet" type="text/css" />
+
+snippet br
+	<br />
+

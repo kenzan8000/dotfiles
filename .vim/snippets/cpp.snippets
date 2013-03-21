@@ -1,0 +1,102 @@
+#################### c ####################
+snippet #include
+	#include ${1}
+
+snippet #define
+	#define ${1}
+
+snippet #ifdef
+	#ifdef ${1}
+	#endif
+
+snippet #ifndef
+	#ifndef ${1}
+	#endif
+
+snippet #pragma
+	#pragma mark - ${1}
+
+snippet if
+	if (${1}) {
+		${2}
+	}
+
+snippet else
+	else {
+		${1}
+	}
+
+snippet switch
+	switch (${1}) {
+		case '${2}':
+			${3}
+			break;
+		default:
+			${4}
+	}
+
+snippet case
+	case ${1}:
+		${2}
+		break;
+
+snippet while
+	while (${1}) {
+		${2}
+	}
+
+snippet for
+	for (${1}) {
+		${2}
+	}
+
+snippet func
+	${1} ${2}(${3})
+	{
+		${4}
+	}
+
+
+#################### cpp ####################
+snippet std::vector
+	std::vector<${1}> ${2};
+
+snippet class
+	#pragma mark - class
+	class ${1} {
+
+	public:
+	#pragma mark - initializer
+		$1(${2});
+
+
+	#pragma mark - release
+		~$1();
+
+
+	#pragma mark - public api
+
+
+	#pragma mark - public constant
+
+
+	#pragma mark - public variable
+
+
+	private:
+	#pragma mark - private api
+
+
+	#pragma mark - private constant
+
+
+	#pragma mark - private variable
+
+
+	};
+
+snippet cpp_method
+	${1} ${2}::${3}(${4})
+	{
+		${5}
+	}
