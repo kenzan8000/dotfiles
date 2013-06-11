@@ -75,6 +75,7 @@ set textwidth=0        "入力されているテキストの最大
 set cursorline
 "シンタックスチェック
 autocmd FileType ruby,eruby :map <C-n> <ESC>:!ruby -cW %<CR>
+autocmd FileType javascript :map <C-n> <ESC>:!javascript -cW %<CR>
 "最初のヤンクを連続でペースト
 vnoremap <silent> <C-p> "0p<CR>
 
@@ -99,10 +100,11 @@ NeoBundle 'https://github.com/rickard/project.vim.git'
 NeoBundle 'https://github.com/vim-scripts/smartchr.git'
 NeoBundle 'https://github.com/tsaleh/vim-align.git'
 NeoBundle 'https://github.com/vim-scripts/ref.vim.git'
+NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
 "C,C++,Objective-C
-NeoBundleLazy 'https://github.com/tokorom/clang_complete.git', 'for-ios', {'autoload': {'filetypes': ['c', 'cpp', 'objc']}}
 NeoBundleLazy 'https://github.com/tokorom/cocoa.vim.git', 'syntax-only', {'autoload': {'filetypes': ['objc']}}
 NeoBundleLazy 'https://github.com/tokorom/ctrlp-docset.git', {'autoload': {'filetypes': ['objc']}}
+NeoBundleLazy 'https://github.com/tokorom/clang_complete.git', 'for-ios', {'autoload': {'filetypes': ['c', 'cpp', 'objc']}}
 NeoBundleLazy 'https://github.com/tokorom/clang_complete-getopts-ios.git', {'autoload': {'filetypes': ['objc']}}
 "Ruby
 NeoBundle 'https://github.com/rhysd/endwize.vim.git'
@@ -182,6 +184,7 @@ let g:user_zen_settings = {
     \    'filters' : 'fc',
     \  },
     \}
+"---------- powerline ----------
 "---------- open-browser ----------
 "カーソル下のURLをブラウザで開く
 nmap <Leader>o <Plug>(openbrowser-open)
