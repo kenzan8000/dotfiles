@@ -78,6 +78,8 @@ autocmd FileType ruby,eruby :map <C-n> <ESC>:!ruby -cW %<CR>
 autocmd FileType javascript :map <C-n> <ESC>:!javascript -cW %<CR>
 "最初のヤンクを連続でペースト
 vnoremap <silent> <C-p> "0p<CR>
+"サーチハイライトををESC二回で消す
+nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 
 "**********************************************************
 "                        プラグイン
@@ -89,6 +91,7 @@ if has('vim_starting')
 endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'https://github.com/Shougo/vimproc.git'
 NeoBundle 'https://github.com/Shougo/neocomplcache.git'
 NeoBundle 'https://github.com/Shougo/unite.vim.git'
 NeoBundle 'https://github.com/tpope/vim-surround.git'
@@ -100,7 +103,7 @@ NeoBundle 'https://github.com/rickard/project.vim.git'
 NeoBundle 'https://github.com/vim-scripts/smartchr.git'
 NeoBundle 'https://github.com/tsaleh/vim-align.git'
 NeoBundle 'https://github.com/vim-scripts/ref.vim.git'
-NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
+NeoBundle 'https://github.com/Lokaltog/vim-powerline.git'
 "C,C++,Objective-C
 NeoBundleLazy 'https://github.com/tokorom/cocoa.vim.git', 'syntax-only', {'autoload': {'filetypes': ['objc']}}
 NeoBundleLazy 'https://github.com/tokorom/ctrlp-docset.git', {'autoload': {'filetypes': ['objc']}}
