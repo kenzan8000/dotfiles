@@ -3,7 +3,7 @@
     email = kenzan8000@gmail.com
 
 [core]
-    editor = vim
+	editor = vim -c \"set fenc=utf-8\"
     excludesfile = ~/.gitignore
 
 [color]
