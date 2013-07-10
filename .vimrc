@@ -104,6 +104,7 @@ NeoBundle 'https://github.com/vim-scripts/smartchr.git'
 NeoBundle 'https://github.com/tsaleh/vim-align.git'
 NeoBundle 'https://github.com/vim-scripts/ref.vim.git'
 NeoBundle 'https://github.com/Lokaltog/vim-powerline.git'
+NeoBundle 'https://github.com/Lokaltog/vim-easymotion.git'
 "C,C++,Objective-C
 NeoBundleLazy 'https://github.com/tokorom/cocoa.vim.git', 'syntax-only', {'autoload': {'filetypes': ['objc']}}
 NeoBundleLazy 'https://github.com/tokorom/ctrlp-docset.git', {'autoload': {'filetypes': ['objc']}}
@@ -188,6 +189,12 @@ let g:user_zen_settings = {
     \  },
     \}
 "---------- powerline ----------
+"---------- vim-easymotion ----------
+let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
+let g:EasyMotion_leader_key="'"
+let g:EasyMotion_grouping=1
+hi EasyMotionTarget ctermbg=none ctermfg=red
+hi EasyMotionShade  ctermbg=none ctermfg=blue
 "---------- open-browser ----------
 "カーソル下のURLをブラウザで開く
 nmap <Leader>o <Plug>(openbrowser-open)
