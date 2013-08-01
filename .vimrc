@@ -29,7 +29,7 @@ else
 endif
 "---------------------------------------------------------
 "ファイル
-autocmd! BufRead,BufNewFile Podfile,*.podspec set filetype=ruby
+autocmd! BufRead,BufNewFile Gemfile,Podfile,*.podspec set filetype=ruby
 autocmd! BufRead,BufNewFile *.scala set filetype=scala
 autocmd! BufRead,BufNewFile *.mm set filetype=objc
 autocmd! BufRead,BufNewFile *.m set filetype=objc
@@ -106,15 +106,22 @@ NeoBundle 'https://github.com/tsaleh/vim-align.git'
 NeoBundle 'https://github.com/vim-scripts/ref.vim.git'
 NeoBundle 'https://github.com/Lokaltog/vim-powerline.git'
 NeoBundle 'https://github.com/Lokaltog/vim-easymotion.git'
-"C,C++,Objective-C
+" C,C++,Objective-C
 NeoBundleLazy 'https://github.com/tokorom/cocoa.vim.git', 'syntax-only', {'autoload': {'filetypes': ['objc']}}
 NeoBundleLazy 'https://github.com/tokorom/ctrlp-docset.git', {'autoload': {'filetypes': ['objc']}}
 NeoBundleLazy 'https://github.com/tokorom/clang_complete.git', 'for-ios', {'autoload': {'filetypes': ['c', 'cpp', 'objc']}}
 NeoBundleLazy 'https://github.com/tokorom/clang_complete-getopts-ios.git', {'autoload': {'filetypes': ['objc']}}
-"Ruby
+" Ruby
 NeoBundle 'https://github.com/rhysd/endwize.vim.git'
-"HTML
+NeoBundle 'https://github.com/tpope/vim-haml'
+NeoBundle 'https://github.com/kchmck/vim-coffee-script'
+" HTML
 NeoBundle 'https://github.com/mattn/zencoding-vim.git'
+NeoBundle 'https://github.com/taichouchou2/html5.vim'
+" CSS
+NeoBundle 'https://github.com/hail2u/vim-css3-syntax'
+" JavaScript
+NeoBundle 'https://github.com/taichouchou2/vim-javascript'
 filetype plugin indent on
 NeoBundleCheck
 "---------- neocomplcache ----------
