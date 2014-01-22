@@ -81,6 +81,11 @@ autocmd FileType javascript :map <C-n> <ESC>:!javascript -cW %<CR>
 vnoremap <silent> <C-p> "0p<CR>
 "サーチハイライトををESC二回で消す
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
+"コメント文字列自動挿入やめる
+augroup auto_comment_off
+	autocmd!
+	autocmd BufEnter * setlocal formatoptions-=ro
+augroup END
 
 "**********************************************************
 "                        プラグイン
