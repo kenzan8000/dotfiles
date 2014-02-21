@@ -59,7 +59,10 @@ set smartindent        "自動インデント
 set nolist             "タブや改行を表示しない(ex:$,^I)
 set tabstop=4 softtabstop=4 shiftwidth=4    "タブ・インデント幅
 set expandtab          "タブの代わりにスペースを使う
-autocmd BufWritePre * :%s/\s\+$//ge   "保存時に行末の空白を除去する
+if &filetype =~ 'markdown'
+else
+    autocmd BufWritePre * :%s/\s\+$//ge   "保存時に行末の空白を除去する
+endif
 "検索
 set hlsearch           "検索結果文字列のハイライトを有効にする
 set ignorecase         "検索の時に大文字小文字を区別しない
