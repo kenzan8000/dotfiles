@@ -50,6 +50,7 @@ set showmatch          "括弧入力時の対応する括弧を表示
 set matchtime=2        "対応する括弧の表示時間を2にする
 set scrolloff=1000     "カーソル位置を画面の中心にする
 set clipboard=unnamed  "ヤンクしたテキストをクリップボードに保存する
+set ambiwidth=double   "ambiguous widthの文字がずれないようにする
 "行
 set number             "行番号を表示
 set wrap               "折り返して次の行に表示する
