@@ -29,11 +29,12 @@ else
 endif
 "---------------------------------------------------------
 "ファイル
-autocmd! BufRead,BufNewFile Gemfile,Podfile,*.podspec set filetype=ruby
+autocmd! BufRead,BufNewFile Gemfile,Podfile,*.podspec,*.yml set filetype=ruby
 autocmd! BufRead,BufNewFile *.scala set filetype=scala
 autocmd! BufRead,BufNewFile *.mm set filetype=objc
 autocmd! BufRead,BufNewFile *.m set filetype=objc
 autocmd! BufRead,BufNewFile *.h set filetype=objcpp
+autocmd! BufRead,BufNewFile *.md set filetype=markdown
 "---------------------------------------------------------
 "ウィンドウ
 if has('mac')
@@ -62,7 +63,7 @@ set tabstop=4 softtabstop=4 shiftwidth=4    "タブ・インデント幅
 set expandtab          "タブの代わりにスペースを使う
 "保存時に行末の空白を除去する
 fun! StripTrailingWhiteSpace()
-  if &ft =~ 'modula2'
+  if &ft =~ 'markdown'
     return
   endif
   %s/\s\+$//e
