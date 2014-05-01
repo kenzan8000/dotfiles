@@ -1,19 +1,17 @@
 [user]
-    name = kenzan8000
     email = kenzan8000@gmail.com
-
-[core]
-	editor = vim -c \"set fenc=utf-8\"
-    excludesfile = ~/.gitignore
-
+    name = kenzan8000
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    grep = auto
-
+	status = auto
+	branch = auto
+	ui = auto
 [alias]
+    amend = commit --amend -C HEAD
     co = checkout
-    ft = fetch
-    so = remote show origin
-    st = status
+    logg = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
+    mergelog = log --merges --pretty=format:'%C(yellow)%h %Cgreen%ci %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
+    history = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn%Cred%d %Creset%s'
+    unmerged = !git --no-pager diff --name-only --diff-filter=U
+    sync = !git checkout master && git pull origin master && git fetch -p origin && git branch -d $(git branch --merged | grep -v master | grep -v '*')
+[push]
+    default = current
