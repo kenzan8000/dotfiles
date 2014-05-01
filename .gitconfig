@@ -2,9 +2,9 @@
     email = kenzan8000@gmail.com
     name = kenzan8000
 [color]
-	status = auto
-	branch = auto
-	ui = auto
+    status = auto
+    branch = auto
+    ui = auto
 [alias]
     amend = commit --amend -C HEAD
     co = checkout
