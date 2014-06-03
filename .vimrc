@@ -151,6 +151,8 @@ NeoBundleLazy 'https://github.com/tokorom/cocoa.vim.git', 'syntax-only', {'autol
 NeoBundleLazy 'https://github.com/tokorom/ctrlp-docset.git', {'autoload': {'filetypes': ['objc']}}
 NeoBundleLazy 'https://github.com/tokorom/clang_complete.git', 'for-ios', {'autoload': {'filetypes': ['c', 'cpp', 'objc']}}
 NeoBundleLazy 'https://github.com/tokorom/clang_complete-getopts-ios.git', {'autoload': {'filetypes': ['objc']}}
+" Swift
+NeoBundle 'https://github.com/toyamarinyon/vim-swift.git'
 " Ruby
 NeoBundle 'https://github.com/rhysd/endwize.vim.git'
 NeoBundle 'https://github.com/tpope/vim-haml'
@@ -212,6 +214,7 @@ endif
 "キーマッピング
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
+"---------- vim-swift ----------
 "---------- endwize ----------
 "neocomplcache, endwizeキーマッピング
 autocmd FileType ruby imap <buffer> <expr><CR>  pumvisible() ? neocomplcache#smart_close_popup()."\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd"
