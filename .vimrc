@@ -146,6 +146,7 @@ NeoBundle 'https://github.com/tsaleh/vim-align.git'
 NeoBundle 'https://github.com/vim-scripts/ref.vim.git'
 NeoBundle 'https://github.com/Lokaltog/vim-powerline.git'
 NeoBundle 'https://github.com/Lokaltog/vim-easymotion.git'
+NeoBundle 'b4b4r07/autocdls.vim'
 " C,C++,Objective-C
 NeoBundleLazy 'https://github.com/tokorom/cocoa.vim.git', 'syntax-only', {'autoload': {'filetypes': ['objc']}}
 NeoBundleLazy 'https://github.com/tokorom/ctrlp-docset.git', {'autoload': {'filetypes': ['objc']}}
@@ -214,6 +215,8 @@ endif
 "キーマッピング
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
+"---------- autocdls.vim ----------
+nmap <Leader>ls <Plug>(autocdls-dols)
 "---------- vim-swift ----------
 "---------- endwize ----------
 "neocomplcache, endwizeキーマッピング

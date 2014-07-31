@@ -1,10 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/hase_kenzan/Dropbox/workspace/job/cyber/trunk_sso/pecolly.xcodeproj'
-let g:netrw_dirhist_2='/Users/hase_kenzan/Dropbox/workspace/job/cyber/nowsoku/NowSokuhou.xcodeproj'
-let g:netrw_dirhist_3='/Users/hase_kenzan/Dropbox/workspace/job/cyber/nowsoku/NowSokuhou'
-let g:netrw_dirhist_4='/Users/hase_kenzan/Dropbox/workspace/job/cyber/nowsoku/NowSokuhou.xcodeproj'
-let g:netrw_dirhist_5='/Users/hase_kenzan/Dropbox/workspace/js/math/oppai.js'
-let g:netrw_dirhist_6='/Users/hase_kenzan/dotfiles/.vim'
-let g:netrw_dirhist_7='/usr/local/Library/Formula'
-let g:netrw_dirhist_8='/usr/local/Library'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/kenzan8000/Downloads'
+let g:netrw_dirhist_2='/Users/kenzan8000/.vim'
+let g:netrw_dirhist_3='/Users/kenzan8000/Dropbox/workspace/job/kenzan8000/CashWapDemo/Pods'

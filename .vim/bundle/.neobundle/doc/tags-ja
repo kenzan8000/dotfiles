@@ -1,4 +1,5 @@
 !_TAG_FILE_ENCODING	utf-8	//
+:PrevimOpen	previm.jax	/*:PrevimOpen*
 :Ref	ref.jax	/*:Ref*
 :Ref-option	ref.jax	/*:Ref-option*
 :RefHistory	ref.jax	/*:RefHistory*
@@ -13,6 +14,7 @@ b:ref_perldoc_mode	ref-perldoc.jax	/*b:ref_perldoc_mode*
 b:ref_perldoc_word	ref-perldoc.jax	/*b:ref_perldoc_word*
 filetype-ref	ref.jax	/*filetype-ref*
 filetype-ref-{source-name}	ref.jax	/*filetype-ref-{source-name}*
+g:previm_open_cmd	previm.jax	/*g:previm_open_cmd*
 g:ref_alc_cmd	ref-alc.jax	/*g:ref_alc_cmd*
 g:ref_alc_encoding	ref-alc.jax	/*g:ref_alc_encoding*
 g:ref_alc_start_linenumber	ref-alc.jax	/*g:ref_alc_start_linenumber*
@@ -41,6 +43,18 @@ g:ref_refe_encoding	ref-refe.jax	/*g:ref_refe_encoding*
 g:ref_refe_rsense_cmd	ref-refe.jax	/*g:ref_refe_rsense_cmd*
 g:ref_refe_version	ref-refe.jax	/*g:ref_refe_version*
 g:ref_use_vimproc	ref.jax	/*g:ref_use_vimproc*
+previm#open()	previm.jax	/*previm#open()*
+previm#refresh()	previm.jax	/*previm#refresh()*
+previm-changelog	previm.jax	/*previm-changelog*
+previm-command	previm.jax	/*previm-command*
+previm-contents	previm.jax	/*previm-contents*
+previm-depends	previm.jax	/*previm-depends*
+previm-functions	previm.jax	/*previm-functions*
+previm-introduction	previm.jax	/*previm-introduction*
+previm-openbrowser	previm.jax	/*previm-openbrowser*
+previm-settings	previm.jax	/*previm-settings*
+previm-usage	previm.jax	/*previm-usage*
+previm.txt	previm.jax	/*previm.txt*
 ref	ref.jax	/*ref*
 ref#available_source_names()	ref.jax	/*ref#available_source_names()*
 ref#available_sources()	ref.jax	/*ref#available_sources()*
