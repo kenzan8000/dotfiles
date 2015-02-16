@@ -53,7 +53,7 @@ hi Statement    guifg=#dddddd   guibg=bg        gui=none    ctermfg=white       
 
 hi PreProc      guifg=#008888   guibg=bg        gui=none    ctermfg=darkcyan     ctermbg=bg        cterm=none
 
-hi Error        guifg=fg        guibg=#ff0000   gui=none    ctermfg=bg           ctermbg=red       cterm=none
+hi Error        guifg=fg        guibg=red       gui=none    ctermfg=bg           ctermbg=red       cterm=none
 
 hi Ignore       guifg=bg        ctermfg=bg
 hi Underlined   guifg=fg        guibg=bg        ctermfg=fg  ctermbg=bg        cterm=underline  cterm=underline  gui=underline
@@ -61,3 +61,5 @@ hi Underlined   guifg=fg        guibg=bg        ctermfg=fg  ctermbg=bg        ct
 hi  Pmenu       guibg=#666666
 hi  PmenuSel    guibg=#8cd0d3   guifg=#666666
 hi  PmenuSbar   guibg=#333333
+
+hi SpellBad     guifg=fg        guibg=bg        gui=none    ctermfg=fg           ctermbg=red        cterm=underline

@@ -2,30 +2,30 @@
 "文字コード
 if has('win32' || 'win64')
 else
-    set enc=utf-8
-    set fenc=utf-8
-    set fencs=utf-8,iso-2022-jp,euc-jp,cp932
+  set enc=utf-8
+  set fenc=utf-8
+  set fencs=utf-8,iso-2022-jp,euc-jp,cp932
 endif
 "----------------------------------------------------------
 "フォント
 if has('mac')
-    set guifont=Ricty:h20
+  set guifont=Ricty:h20
 elseif has('win32' || 'win64')
 else
-    set guifont=Ricty\ 16
+  set guifont=Ricty\ 16
 endif
 "----------------------------------------------------------
 "カラー
 syntax on
 hi clear
 if exists("syntax_on")
-    syntax reset
+  syntax reset
 endif
 set bg=dark
 if has('gui_macvim')
-    colorscheme macvim
+  colorscheme macvim
 else
-    colorscheme black
+  colorscheme black
 endif
 "---------------------------------------------------------
 "ファイル
@@ -40,7 +40,7 @@ autocmd! BufRead,BufNewFile *.md set filetype=markdown
 if has('mac')
 elseif has('win32' || 'win64')
 else
-    au GUIEnter * simalt ~x
+  au GUIEnter * simalt ~x
 endif
 "---------------------------------------------------------
 set hidden
@@ -67,9 +67,7 @@ fun! s:SpellConf()
   redir! => syntax
   silent syntax
   redir END
-
   set spell
-
   if syntax =~? '/<comment\>'
     syntax spell default
     syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent containedin=Comment contained
@@ -77,10 +75,8 @@ fun! s:SpellConf()
     syntax spell toplevel
     syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent
   endif
-
   syntax cluster Spell add=SpellNotAscii,SpellMaybeCode
 endfunc
-
 augroup spell_check
   autocmd!
   autocmd BufReadPost,BufNewFile,Syntax * call s:SpellConf()
@@ -138,11 +134,11 @@ let g:markdown_fenced_languages = [
 " :で始まるか、[で終わるか、]で終わるファイル名を作ってしまうのを防ぐ
 autocmd BufWriteCmd :*,*[,*] call s:write_check_typo(expand('<afile>'))
 function! s:write_check_typo(file)
-    let prompt = "possible typo: really want to write to '" . a:file . "'?(y/n):"
-    let input = input(prompt)
-    if input =~? '^y\(es\)\=$'
-        execute 'write'.(v:cmdbang ? '!' : '') a:file
-    endif
+  let prompt = "possible typo: really want to write to '" . a:file . "'?(y/n):"
+  let input = input(prompt)
+  if input =~? '^y\(es\)\=$'
+    execute 'write'.(v:cmdbang ? '!' : '') a:file
+  endif
 endfunction
 
 "**********************************************************
@@ -151,7 +147,7 @@ endfunction
 "---------- neobundle ----------
 set nocompatible
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -201,39 +197,39 @@ let g:neocomplcache_min_syntax_length=3
 setlocal omnifunc=syntaxcomplete#Complete
 "辞書
 let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default'    : '',
-    \ 'cpp'        : $HOME . '/.vim/dict/cpp.dict',
-    \ 'javascript' : $HOME . '/.vim/dict/javascript.dict',
-    \ 'objc'       : $HOME . '/.vim/dict/objc.dict',
-    \ 'objcpp'     : $HOME . '/.vim/dict/objcpp.dict',
-    \ }
+  \ 'default'    : '',
+  \ 'cpp'        : $HOME . '/.vim/dict/cpp.dict',
+  \ 'javascript' : $HOME . '/.vim/dict/javascript.dict',
+  \ 'objc'       : $HOME . '/.vim/dict/objc.dict',
+  \ 'objcpp'     : $HOME . '/.vim/dict/objcpp.dict',
+  \ }
 "コードスニペット
 let g:neocomplcache_snippets_dir=$HOME . '/.vim/snippets'
 if has('mac')
-    "neocomplcache + rsense
-    let g:rsenseHome = '/usr/local/Cellar/rsense/0.3'
-    let g:rsenseUseOmniFunc=1
-    if !exists('g:neocomplcache_omni_patterns')
-        let g:neocomplcache_omni_patterns = {}
-    endif
-    let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+  "neocomplcache + rsense
+  let g:rsenseHome = '/usr/local/Cellar/rsense/0.3'
+  let g:rsenseUseOmniFunc=1
+  if !exists('g:neocomplcache_omni_patterns')
+    let g:neocomplcache_omni_patterns = {}
+  endif
+  let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
-    "neocomplcache + clang_complete
-    if !exists('g:neocomplcache_force_omni_patterns')
-        let g:neocomplcache_force_omni_patterns = {}
-    endif
-    let g:neocomplcache_force_overwrite_completefunc=1
-    let g:neocomplcache_force_omni_patterns.c =
-        \ '[^.[:digit:] *\t]\%(\.\|->\)'
-    let g:neocomplcache_force_omni_patterns.cpp =
-        \ '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-    let g:neocomplcache_force_omni_patterns.objc =
-        \ '[^.[:digit:] *\t]\%(\.\|->\)'
-    let g:neocomplcache_force_omni_patterns.objcpp =
-        \ '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-    let g:clang_complete_auto=0
-    let g:clang_auto_select=0
-    let g:clang_use_library=0
+  "neocomplcache + clang_complete
+  if !exists('g:neocomplcache_force_omni_patterns')
+    let g:neocomplcache_force_omni_patterns = {}
+  endif
+  let g:neocomplcache_force_overwrite_completefunc=1
+  let g:neocomplcache_force_omni_patterns.c =
+    \ '[^.[:digit:] *\t]\%(\.\|->\)'
+  let g:neocomplcache_force_omni_patterns.cpp =
+    \ '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+  let g:neocomplcache_force_omni_patterns.objc =
+    \ '[^.[:digit:] *\t]\%(\.\|->\)'
+  let g:neocomplcache_force_omni_patterns.objcpp =
+    \ '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+  let g:clang_complete_auto=0
+  let g:clang_auto_select=0
+  let g:clang_use_library=0
 endif
 "キーマッピング
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
@@ -256,15 +252,15 @@ imap <C-E> <C-Y>,
 let g:user_zen_leader_key = '<C-Y>'
 "言語別に対応させる
 let g:user_zen_settings = {
-    \  'lang' : 'ja',
-    \  'html' : {
-    \    'filters' : 'html',
-    \    'indentation' : '    '
-    \  },
-    \  'css' : {
-    \    'filters' : 'fc',
-    \  },
-    \}
+  \  'lang' : 'ja',
+  \  'html' : {
+  \    'filters' : 'html',
+  \    'indentation' : '    '
+  \  },
+  \  'css' : {
+  \    'filters' : 'fc',
+  \  },
+  \}
 "---------- powerline ----------
 "---------- vim-easymotion ----------
 let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
