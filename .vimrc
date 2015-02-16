@@ -183,7 +183,7 @@ NeoBundle 'https://github.com/tpope/vim-haml'
 NeoBundle 'https://github.com/kchmck/vim-coffee-script'
 " HTML
 NeoBundle 'https://github.com/mattn/zencoding-vim.git'
-NeoBundle 'https://github.com/taichouchou2/html5.vim'
+NeoBundle 'https://github.com/othree/html5.vim'
 " CSS
 NeoBundle 'https://github.com/hail2u/vim-css3-syntax'
 " JavaScript
