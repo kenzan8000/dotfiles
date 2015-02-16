@@ -61,6 +61,30 @@ set smartindent        "自動インデント
 set nolist             "タブや改行を表示しない(ex:$,^I)
 set tabstop=4 softtabstop=4 shiftwidth=4    "タブ・インデント幅
 set expandtab          "タブの代わりにスペースを使う
+"" スペルチェック
+set spelllang=en,cjk
+fun! s:SpellConf()
+  redir! => syntax
+  silent syntax
+  redir END
+
+  set spell
+
+  if syntax =~? '/<comment\>'
+    syntax spell default
+    syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent containedin=Comment contained
+  else
+    syntax spell toplevel
+    syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent
+  endif
+
+  syntax cluster Spell add=SpellNotAscii,SpellMaybeCode
+endfunc
+
+augroup spell_check
+  autocmd!
+  autocmd BufReadPost,BufNewFile,Syntax * call s:SpellConf()
+augroup END
 "保存時に行末の空白を除去する
 fun! StripTrailingWhiteSpace()
   if &ft =~ 'markdown'
@@ -92,8 +116,8 @@ vnoremap <silent> <C-p> "0p<CR>
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 "コメント文字列自動挿入やめる
 augroup auto_comment_off
-	autocmd!
-	autocmd BufEnter * setlocal formatoptions-=ro
+  autocmd!
+  autocmd BufEnter * setlocal formatoptions-=ro
 augroup END
 "markdownに書かれているプログラミング言語をハイライト
 let g:markdown_fenced_languages = [
@@ -146,7 +170,6 @@ NeoBundle 'https://github.com/tsaleh/vim-align.git'
 NeoBundle 'https://github.com/vim-scripts/ref.vim.git'
 NeoBundle 'https://github.com/Lokaltog/vim-powerline.git'
 NeoBundle 'https://github.com/Lokaltog/vim-easymotion.git'
-NeoBundle 'b4b4r07/autocdls.vim'
 " C,C++,Objective-C
 NeoBundleLazy 'https://github.com/tokorom/cocoa.vim.git', 'syntax-only', {'autoload': {'filetypes': ['objc']}}
 NeoBundleLazy 'https://github.com/tokorom/ctrlp-docset.git', {'autoload': {'filetypes': ['objc']}}
@@ -215,8 +238,6 @@ endif
 "キーマッピング
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
-"---------- autocdls.vim ----------
-nmap <Leader>ls <Plug>(autocdls-dols)
 "---------- vim-swift ----------
 "---------- endwize ----------
 "neocomplcache, endwizeキーマッピング
