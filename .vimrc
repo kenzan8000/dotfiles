@@ -79,7 +79,7 @@ fun! s:SpellConf()
 endfunc
 augroup spell_check
   autocmd!
-  autocmd BufReadPost,BufNewFile,Syntax * call s:SpellConf()
+  autocmd BufReadPost,BufNewFile,Syntax *.md call s:SpellConf()
 augroup END
 "保存時に行末の空白を除去する
 fun! StripTrailingWhiteSpace()
