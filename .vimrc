@@ -176,6 +176,7 @@ NeoBundle 'https://github.com/toyamarinyon/vim-swift.git'
 " Ruby
 NeoBundle 'https://github.com/rhysd/endwize.vim.git'
 NeoBundle 'https://github.com/tpope/vim-haml'
+NeoBundle 'https://github.com/slim-template/vim-slim'
 NeoBundle 'https://github.com/kchmck/vim-coffee-script'
 " HTML
 NeoBundle 'https://github.com/mattn/zencoding-vim.git'
