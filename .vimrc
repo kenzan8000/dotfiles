@@ -164,6 +164,7 @@ NeoBundle 'https://github.com/rickard/project.vim.git'
 NeoBundle 'https://github.com/vim-scripts/smartchr.git'
 NeoBundle 'https://github.com/tsaleh/vim-align.git'
 NeoBundle 'https://github.com/vim-scripts/ref.vim.git'
+NeoBundle 'https://github.com/yuku-t/vim-ref-ri.git'
 NeoBundle 'https://github.com/Lokaltog/vim-powerline.git'
 NeoBundle 'https://github.com/Lokaltog/vim-easymotion.git'
 " C,C++,Objective-C
