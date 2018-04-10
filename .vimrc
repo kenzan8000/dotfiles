@@ -160,7 +160,7 @@ set nocompatible
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'https://github.com/Shougo/vimproc.git'
 NeoBundle 'https://github.com/Shougo/neocomplcache.git'
@@ -178,6 +178,7 @@ NeoBundle 'https://github.com/vim-scripts/ref.vim.git'
 NeoBundle 'https://github.com/yuku-t/vim-ref-ri.git'
 NeoBundle 'https://github.com/Lokaltog/vim-powerline.git'
 NeoBundle 'https://github.com/Lokaltog/vim-easymotion.git'
+NeoBundle 'https://github.com/haya14busa/incsearch.vim.git'
 " C,C++,Objective-C
 NeoBundleLazy 'https://github.com/tokorom/cocoa.vim.git', 'syntax-only', {'autoload': {'filetypes': ['objc']}}
 NeoBundleLazy 'https://github.com/tokorom/ctrlp-docset.git', {'autoload': {'filetypes': ['objc']}}
@@ -201,6 +202,7 @@ NeoBundle 'https://github.com/digitaltoad/vim-jade.git'
 " Markdown
 NeoBundle 'https://github.com/tpope/vim-markdown'
 filetype plugin indent on
+call neobundle#end()
 NeoBundleCheck
 "---------- neocomplcache ----------
 let g:neocomplcache_enable_at_startup=1           "neocomplcacheを有効にする
@@ -282,6 +284,14 @@ let g:EasyMotion_leader_key="'"
 let g:EasyMotion_grouping=1
 hi EasyMotionTarget ctermbg=none ctermfg=red
 hi EasyMotionShade  ctermbg=none ctermfg=blue
+"---------- incsearch ----------
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
 "---------- open-browser ----------
 "カーソル下のURLをブラウザで開く
 nmap <Leader>o <Plug>(openbrowser-open)
@@ -305,3 +315,4 @@ map <silent> <leader>T :TlistToggle<CR>
 "---------- ref ----------
 nnoremap :ref :Ref
 "---------- unite ----------
+
