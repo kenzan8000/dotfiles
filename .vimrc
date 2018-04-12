@@ -178,26 +178,27 @@ NeoBundle 'https://github.com/vim-scripts/ref.vim.git'
 NeoBundle 'https://github.com/yuku-t/vim-ref-ri.git'
 NeoBundle 'https://github.com/Lokaltog/vim-powerline.git'
 NeoBundle 'https://github.com/Lokaltog/vim-easymotion.git'
-NeoBundle 'https://github.com/haya14busa/incsearch.vim.git'
+NeoBundle 'https://github.com/tpope/vim-pathogen.git'
 " C,C++,Objective-C
 NeoBundleLazy 'https://github.com/tokorom/cocoa.vim.git', 'syntax-only', {'autoload': {'filetypes': ['objc']}}
 NeoBundleLazy 'https://github.com/tokorom/ctrlp-docset.git', {'autoload': {'filetypes': ['objc']}}
 NeoBundleLazy 'https://github.com/tokorom/clang_complete.git', 'for-ios', {'autoload': {'filetypes': ['c', 'cpp', 'objc']}}
 NeoBundleLazy 'https://github.com/tokorom/clang_complete-getopts-ios.git', {'autoload': {'filetypes': ['objc']}}
 " Swift
-NeoBundle 'https://github.com/toyamarinyon/vim-swift.git'
+"NeoBundle 'https://github.com/keith/swift.vim.git'
+NeoBundle 'https://github.com/keith/swift.vim.git'
 " Ruby
 NeoBundle 'https://github.com/rhysd/endwize.vim.git'
 NeoBundle 'https://github.com/tpope/vim-haml'
 NeoBundle 'https://github.com/slim-template/vim-slim'
 NeoBundle 'https://github.com/kchmck/vim-coffee-script'
 " HTML
-NeoBundle 'https://github.com/mattn/zencoding-vim.git'
+NeoBundle 'https://github.com/mattn/emmet-vim.git'
 NeoBundle 'https://github.com/othree/html5.vim'
 " CSS
 NeoBundle 'https://github.com/hail2u/vim-css3-syntax'
 " JavaScript
-NeoBundle 'https://github.com/taichouchou2/vim-javascript'
+"NeoBundle 'https://github.com/taichouchou2/vim-javascript'
 NeoBundle 'https://github.com/digitaltoad/vim-jade.git'
 " Markdown
 NeoBundle 'https://github.com/tpope/vim-markdown'
@@ -262,6 +263,7 @@ let g:Align_xstrlen=3
 "---------- syntastic ----------
 let g:syntastic_enable_signs=0
 let g:syntastic_auto_loc_list=2
+let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
 "---------- zencoding ----------
 "codaのデフォルトと一緒にする
 imap <C-E> <C-Y>,
@@ -284,14 +286,8 @@ let g:EasyMotion_leader_key="'"
 let g:EasyMotion_grouping=1
 hi EasyMotionTarget ctermbg=none ctermfg=red
 hi EasyMotionShade  ctermbg=none ctermfg=blue
-"---------- incsearch ----------
-let g:incsearch#auto_nohlsearch = 1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
+"---------- vim-pathogen ----------
+execute pathogen#infect()
 "---------- open-browser ----------
 "カーソル下のURLをブラウザで開く
 nmap <Leader>o <Plug>(openbrowser-open)
@@ -315,4 +311,3 @@ map <silent> <leader>T :TlistToggle<CR>
 "---------- ref ----------
 nnoremap :ref :Ref
 "---------- unite ----------
-
