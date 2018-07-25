@@ -200,6 +200,8 @@ NeoBundle 'https://github.com/hail2u/vim-css3-syntax'
 " JavaScript
 "NeoBundle 'https://github.com/taichouchou2/vim-javascript'
 NeoBundle 'https://github.com/digitaltoad/vim-jade.git'
+" Vue
+NeoBundle 'https://github.com/posva/vim-vue.git'
 " Markdown
 NeoBundle 'https://github.com/tpope/vim-markdown'
 filetype plugin indent on
