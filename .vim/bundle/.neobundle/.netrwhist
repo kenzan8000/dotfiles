@@ -1,4 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/kenzan8000/Dropbox/workspace/job/kenzan8000/crime_hazard_map/.git'
-let g:netrw_dirhist_2='/Users/kenzan8000/Dropbox/workspace/job/iSiD/HyperMediaAD/document'
