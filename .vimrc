@@ -115,22 +115,6 @@ augroup auto_comment_off
   autocmd!
   autocmd BufEnter * setlocal formatoptions-=ro
 augroup END
-"markdownに書かれているプログラミング言語をハイライト
-let g:markdown_fenced_languages = [
-\  'c',
-\  'cpp',
-\  'objc',
-\  'objective-c=objc',
-\  'coffee',
-\  'css',
-\  'erb=eruby',
-\  'javascript',
-\  'js=javascript',
-\  'json=javascript',
-\  'ruby',
-\  'sass',
-\  'xml',
-\]
 " :で始まるか、[で終わるか、]で終わるファイル名を作ってしまうのを防ぐ
 autocmd BufWriteCmd :*,*[,*] call s:write_check_typo(expand('<afile>'))
 function! s:write_check_typo(file)
